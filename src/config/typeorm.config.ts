@@ -1,5 +1,8 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import 'dotenv/config';
+import { User } from '../modules/user/entities/user.entity';
+import { Board } from '../modules/board/entities/board.entity';
+import { Comment } from '../modules/comment/entities/commment.entity';
 
 export const typeORMConfig: TypeOrmModuleOptions = {
   type: 'mysql',
@@ -8,7 +11,9 @@ export const typeORMConfig: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [],
+  entities: [User, Board, Comment],
+  autoLoadEntities: true,
+  migrations: [__dirname + 'src/database/migrations/*{.ts,.js}'],
   logging: true,
   synchronize: true,
 };
