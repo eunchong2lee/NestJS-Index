@@ -12,3 +12,5 @@ export default class BoardSeeder implements Seeder {
     return;
   }
 }
+
+//https://velog.io/@gkqkehs7/typeorm-extension%EC%9C%BC%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-seeding

@@ -1,10 +1,10 @@
-import { DataSource } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
 import 'dotenv/config';
-import { User } from '../../modules/user/entities/user.entity';
-import { Board } from '../../modules/board/entities/board.entity';
-import { Comment } from '../../modules/comment/entities/commment.entity';
+import { User } from '../modules/user/entities/user.entity';
+import { Board } from '../modules/board/entities/board.entity';
+import { Comment } from '../modules/comment/entities/commment.entity';
 
-const dataSource = new DataSource({
+const dbDatabaseSource: DataSourceOptions = {
   type: 'mysql',
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT),
@@ -15,6 +15,8 @@ const dataSource = new DataSource({
   migrations: [__dirname + 'src/database/migrations/*{.ts,.js}'],
   logging: true,
   synchronize: false,
-});
+};
+
+const dataSource = new DataSource(dbDatabaseSource);
 
 export default dataSource;
