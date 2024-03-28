@@ -7,7 +7,7 @@ import { BoardSearchDTO } from './dtos/boardSearch.dto';
 export class BoardController {
   constructor(private readonly boardService: BoardService) {}
 
-  @Get('')
+  @Get()
   async findAll(): Promise<Board[]> {
     return await this.boardService.findAll();
   }
