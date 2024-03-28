@@ -3,10 +3,12 @@
 
 `1. typeorm-extension 및 faker-js/faker 가상의 데이터 만들기
 `
+
 `2. database index 설정 전 후 속도 처리 결과 비교
 `
 
 typeorm-extension 및 faker-js/faker를 통해 100000개 이상의 가상 데이터 저장 및
+
 typeorm Index 설정 후 성능 체크
 
 
