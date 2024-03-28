@@ -10,7 +10,7 @@ export class BoardRepository {
     private boardRepository: Repository<Board>,
   ) {}
 
-  async findAll(options) {
+  async find(options) {
     return await this.boardRepository.find(options);
   }
 
