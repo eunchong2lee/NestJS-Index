@@ -1,14 +1,13 @@
 import {
   Column,
   Entity,
-  Index,
   JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
-import { Comment } from '../../comment/entities/commment.entity';
+import { Comment } from '../../comment/entities/comment.entity';
 
 @Entity()
 export class Board {
@@ -16,7 +15,6 @@ export class Board {
   id: number;
 
   @Column()
-  @Index()
   title: string;
 
   @Column()

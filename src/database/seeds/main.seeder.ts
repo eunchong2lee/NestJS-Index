@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 import { Seeder, SeederFactoryManager } from 'typeorm-extension';
 import { Board } from '../../modules/board/entities/board.entity';
-import { Comment } from '../../modules/comment/entities/commment.entity';
+import { Comment } from '../../modules/comment/entities/comment.entity';
 import { User } from '../../modules/user/entities/user.entity';
 import { faker } from '@faker-js/faker';
 

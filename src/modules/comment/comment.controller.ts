@@ -1,6 +1,6 @@
 import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
 import { CommentService } from './comment.service';
-import { Comment } from './entities/commment.entity';
+import { Comment } from './entities/comment.entity';
 import { CommentSearchDTO } from './dtos/commentSearch.dto';
 
 @Controller('comments')

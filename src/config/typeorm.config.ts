@@ -2,7 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import 'dotenv/config';
 import { User } from '../modules/user/entities/user.entity';
 import { Board } from '../modules/board/entities/board.entity';
-import { Comment } from '../modules/comment/entities/commment.entity';
+import { Comment } from '../modules/comment/entities/comment.entity';
 
 export const typeORMConfig: TypeOrmModuleOptions = {
   type: 'mysql',

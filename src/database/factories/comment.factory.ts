@@ -1,5 +1,5 @@
 import { setSeederFactory } from 'typeorm-extension';
-import { Comment } from '../../modules/comment/entities/commment.entity';
+import { Comment } from '../../modules/comment/entities/comment.entity';
 
 export const CommentFactory = setSeederFactory(Comment, (faker) => {
   const comment = new Comment();

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Board } from '../../board/entities/board.entity';
-import { Comment } from '../../comment/entities/commment.entity';
+import { Comment } from '../../comment/entities/comment.entity';
 import { Factory } from 'nestjs-seeder';
 
 @Entity()
