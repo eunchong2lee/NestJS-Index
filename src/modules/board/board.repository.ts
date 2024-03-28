@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { Board } from './entities/board.entity';
 
 @Injectable()
@@ -9,6 +9,17 @@ export class BoardRepository {
     @InjectRepository(Board)
     private boardRepository: Repository<Board>,
   ) {}
+
+  async search(options) {
+    const { type, content } = options;
+    const whereClause = {};
+
+    if (content) {
+      whereClause[type] = Like(`%${content}%`);
+    }
+
+    return await this.boardRepository.find({ where: whereClause });
+  }
 
   async find(options) {
     return await this.boardRepository.find(options);

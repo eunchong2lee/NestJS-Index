@@ -5,7 +5,7 @@ import { CommentRepository } from './comment.repository';
 export class CommentService {
   constructor(private readonly commentRepository: CommentRepository) {}
 
-  async findAll() {
+  async findAll(commentSearchDto) {
     let options;
     return await this.commentRepository.find(options);
   }

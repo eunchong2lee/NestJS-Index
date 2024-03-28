@@ -5,7 +5,7 @@ import { UserRepository } from './user.repository';
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async findAll() {
+  async findAll(userSearchDto) {
     const options = '';
     return await this.userRepository.find(options);
   }
