@@ -53,8 +53,8 @@ export class MainSeeder implements Seeder {
           return made;
         }),
     );
-    await boardRepository.save(boardIdxs);
-    await commentRepository.save(commentIdxs);
+    await boardIdxRepository.save(boardIdxs);
+    await commentIdxRepository.save(commentIdxs);
 
     // 너무 많은 양의 데이터 생성시 stack Overflow error 발생
     const boards = await Promise.all(
