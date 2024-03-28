@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  Index,
   JoinColumn,
   ManyToOne,
   OneToMany,
@@ -15,6 +16,7 @@ export class Board {
   id: number;
 
   @Column()
+  @Index()
   title: string;
 
   @Column()

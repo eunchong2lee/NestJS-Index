@@ -13,7 +13,7 @@ const dbDatabaseSource: DataSourceOptions & SeederOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   entities: [User, Board, Comment],
-  migrations: [__dirname + 'src/database/migrations/*{.ts,.js}'],
+  migrations: ['src/database/migrations/*{.ts,.js}'],
   seeds: ['src/database/seeds/*{.ts,.js}'],
   seedTracking: false,
   factories: ['src/database/factories/*{.ts,.js}'],

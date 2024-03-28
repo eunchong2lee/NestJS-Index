@@ -6,7 +6,7 @@ export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
   async findAll() {
-    let options;
+    const options = { where: { name: 'a' } };
     return await this.userRepository.find(options);
   }
 
