@@ -8,8 +8,13 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  async findAll(@Query() userSearchDto: UserSearchDTO): Promise<User[]> {
-    return await this.userService.findAll(userSearchDto);
+  async findAll(): Promise<User[]> {
+    return await this.userService.findAll();
+  }
+
+  @Get('/search')
+  async search(@Query() userSearchDto: UserSearchDTO): Promise<User[]> {
+    return await this.userService.search(userSearchDto);
   }
 
   @Get('/:id')

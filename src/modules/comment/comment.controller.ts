@@ -8,10 +8,15 @@ export class CommentController {
   constructor(private readonly commentService: CommentService) {}
 
   @Get()
-  async findAll(
+  async findAll(): Promise<Comment[]> {
+    return await this.commentService.findAll();
+  }
+
+  @Get('/search')
+  async search(
     @Query() commentSearchDto: CommentSearchDTO,
   ): Promise<Comment[]> {
-    return await this.commentService.findAll(commentSearchDto);
+    return await this.commentService.search(commentSearchDto);
   }
 
   @Get('/:id')

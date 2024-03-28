@@ -5,9 +5,13 @@ import { CommentRepository } from './comment.repository';
 export class CommentService {
   constructor(private readonly commentRepository: CommentRepository) {}
 
-  async findAll(commentSearchDto) {
-    let options;
+  async findAll() {
+    const options = '';
     return await this.commentRepository.find(options);
+  }
+
+  async search(commentSearchDto) {
+    return await this.commentRepository.search(commentSearchDto);
   }
 
   async findOne() {

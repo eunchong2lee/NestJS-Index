@@ -14,6 +14,10 @@ export class CommentRepository {
     return await this.commentRepository.find(options);
   }
 
+  async search(options) {
+    return await this.commentRepository.find(options);
+  }
+
   async findOne(options) {
     return await this.commentRepository.findOne(options);
   }
