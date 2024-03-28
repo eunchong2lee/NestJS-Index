@@ -4,6 +4,9 @@ import { User } from '../modules/user/entities/user.entity';
 import { Board } from '../modules/board/entities/board.entity';
 import { Comment } from '../modules/comment/entities/comment.entity';
 import { SeederOptions } from 'typeorm-extension';
+import { UserIdx } from '../modules/user/entities/userIdx.entity';
+import { BoardIdx } from '../modules/board/entities/boardIdx.entity';
+import { CommentIdx } from '../modules/comment/entities/commentIdx.entity';
 
 const dbDatabaseSource: DataSourceOptions & SeederOptions = {
   type: 'mysql',
@@ -12,7 +15,7 @@ const dbDatabaseSource: DataSourceOptions & SeederOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [User, Board, Comment],
+  entities: [User, Board, Comment, UserIdx, BoardIdx, CommentIdx],
   migrations: ['src/database/migrations/*{.ts,.js}'],
   seeds: ['src/database/seeds/*{.ts,.js}'],
   seedTracking: false,
