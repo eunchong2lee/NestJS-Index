@@ -10,7 +10,7 @@ export class CommentRepository {
     private commentRepository: Repository<Comment>,
   ) {}
 
-  async findAll(options) {
+  async find(options) {
     return await this.commentRepository.find(options);
   }
 
