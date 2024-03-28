@@ -1,12 +1,24 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Comment } from './entities/commment.entity';
 
 @Injectable()
 export class CommentRepository {
-  async findAll() {
-    return;
+  constructor(
+    @InjectRepository(Comment)
+    private commentRepository: Repository<Comment>,
+  ) {}
+
+  async findAll(options) {
+    return await this.commentRepository.find(options);
   }
 
-  async findOne() {
-    return;
+  async findOne(options) {
+    return await this.commentRepository.findOne(options);
+  }
+
+  async query(options) {
+    return await this.commentRepository.query(options);
   }
 }

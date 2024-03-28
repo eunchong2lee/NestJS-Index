@@ -17,10 +17,11 @@ export class MainSeeder implements Seeder {
     const boardFactory = factoryManager.get(Board);
     const commentFactory = factoryManager.get(Comment);
 
-    const users = await userFactory.saveMany(7);
+    const users = await userFactory.saveMany(70);
 
+    // stack Overflow error 발생
     const boards = await Promise.all(
-      Array(17)
+      Array(30000)
         .fill('')
         .map(async () => {
           const made = await boardFactory.make({
@@ -31,7 +32,7 @@ export class MainSeeder implements Seeder {
     );
 
     const comments = await Promise.all(
-      Array(60)
+      Array(100000)
         .fill('')
         .map(async () => {
           const made = await commentFactory.make({

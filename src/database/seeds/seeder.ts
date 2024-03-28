@@ -16,14 +16,14 @@ const dbDatabaseSource: DataSourceOptions & SeederOptions = {
   seeds: ['src/database/seeds/*{.ts,.js}'],
   seedTracking: false,
   factories: ['src/database/factories/*{.ts,.js}'],
-  logging: true,
+  logging: false,
   synchronize: false,
 };
 
 const dataSource = new DataSource(dbDatabaseSource);
 
 dataSource.initialize().then(async () => {
-  await dataSource.synchronize(true);
+  //   await dataSource.synchronize(true);
   await runSeeders(dataSource);
   process.exit();
 });
