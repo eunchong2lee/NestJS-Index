@@ -23,11 +23,13 @@
     "db:drop": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs db:drop -d src/database/data-source.ts",
     "seed:run": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run",
     "seed:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:create",
+    "seed": "ts-node src/database/seeds/seeder.ts",
     "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
     "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:create": "yarn run typeorm migration:create -- ./src/database/migrations",
     "migration:generate": "yarn run typeorm migration:generate",
+    "migration:run": "yarn run typeorm migration:run -d src/database/data-source.ts",
     "seeder": "ts-node src/database/seeders/seeder.ts"
   },
   "dependencies": {

@@ -3,8 +3,9 @@ import 'dotenv/config';
 import { User } from '../modules/user/entities/user.entity';
 import { Board } from '../modules/board/entities/board.entity';
 import { Comment } from '../modules/comment/entities/commment.entity';
+import { SeederOptions } from 'typeorm-extension';
 
-const dbDatabaseSource: DataSourceOptions = {
+const dbDatabaseSource: DataSourceOptions & SeederOptions = {
   type: 'mysql',
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT),
@@ -13,6 +14,9 @@ const dbDatabaseSource: DataSourceOptions = {
   database: process.env.DB_DATABASE,
   entities: [User, Board, Comment],
   migrations: [__dirname + 'src/database/migrations/*{.ts,.js}'],
+  seeds: ['src/database/seeds/*{.ts,.js}'],
+  seedTracking: false,
+  factories: ['src/database/factories/*{.ts,.js}'],
   logging: true,
   synchronize: false,
 };
