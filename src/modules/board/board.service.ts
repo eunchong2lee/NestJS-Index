@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { BoardRepository } from './board.repository';
+import { BoardRepository } from './repositories/board.repository';
 import { BoardSearchDTO } from './dtos/boardSearch.dto';
 
 @Injectable()

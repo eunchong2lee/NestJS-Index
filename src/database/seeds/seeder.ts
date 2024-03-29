@@ -26,7 +26,7 @@ const dbDatabaseSource: DataSourceOptions & SeederOptions = {
 const dataSource = new DataSource(dbDatabaseSource);
 
 dataSource.initialize().then(async () => {
-  //   await dataSource.synchronize(true);
+  // await dataSource.synchronize(true);
   await runSeeders(dataSource);
   process.exit();
 });
