@@ -1,10 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { BoardRepository } from './repositories/board.repository';
 import { BoardSearchDTO } from './dtos/boardSearch.dto';
+import { BoardIdxRepository } from './repositories/boardIdx.repository';
 
 @Injectable()
 export class BoardService {
-  constructor(private readonly boardRepository: BoardRepository) {}
+  constructor(
+    private readonly boardRepository: BoardRepository,
+    private readonly boardIdxRepository: BoardIdxRepository,
+  ) {}
 
   async findAll() {
     const options = '';

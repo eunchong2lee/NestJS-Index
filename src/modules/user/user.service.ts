@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { UserRepository } from './repositories/user.repository';
+import { UserIdxRepository } from './repositories/userIdx.repository';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly userRepository: UserRepository) {}
+  constructor(
+    private readonly userRepository: UserRepository,
+    private readonly userIdxRepository: UserIdxRepository,
+  ) {}
 
   async findAll() {
     const options = '';
