@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CommentIdx } from '../entities/commentIdx.entity';
 
 @Injectable()
@@ -15,7 +15,16 @@ export class CommentIdxRepository {
   }
 
   async search(options) {
-    return await this.commentIdxRepository.find(options);
+    console.log('idx');
+    const { text } = options;
+    const whereClause = {};
+    if (text) {
+      whereClause[text] = Like(`${text}%`);
+    }
+    return await this.commentIdxRepository.find({
+      where: {},
+      order: { text: 'asc' },
+    });
   }
 
   async findOne(options) {

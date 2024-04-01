@@ -13,7 +13,6 @@ export class BoardRepository {
   async search(options) {
     const { type, content } = options;
     const whereClause = {};
-
     if (content) {
       whereClause[type] = Like(`%${content}%`);
     }

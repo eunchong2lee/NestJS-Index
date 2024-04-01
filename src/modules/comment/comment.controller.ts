@@ -20,7 +20,7 @@ export class CommentController {
     return await this.commentService.search(commentSearchDto);
   }
 
-  @Get('/Idx/search')
+  @Get('/idx/search')
   async searchIdx(
     @Query() commentSearchDto: CommentSearchDTO,
   ): Promise<CommentIdx[]> {
