@@ -18,8 +18,7 @@ export class CommentService {
     return await this.commentRepository.search(commentSearchDto);
   }
 
-  async findOne() {
-    let options;
-    return await this.commentRepository.findOne(options);
+  async searchIdx(commentSearchDto) {
+    return await this.commentIdxRepository.search(commentSearchDto);
   }
 }

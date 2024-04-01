@@ -19,8 +19,7 @@ export class BoardService {
     return await this.boardRepository.search(boardSearchDto);
   }
 
-  async findOne() {
-    let options;
-    return await this.boardRepository.findOne(options);
+  async searchIdx(boardSearchDto: BoardSearchDTO) {
+    return await this.boardIdxRepository.search(boardSearchDto);
   }
 }

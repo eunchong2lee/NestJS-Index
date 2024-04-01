@@ -2,6 +2,7 @@ import { Controller, Get, Query, Param, ParseIntPipe } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './entities/user.entity';
 import { UserSearchDTO } from './dtos/userSeach.dto';
+import { UserIdx } from './entities/userIdx.entity';
 
 @Controller('users')
 export class UserController {
@@ -17,8 +18,8 @@ export class UserController {
     return await this.userService.search(userSearchDto);
   }
 
-  @Get('/:id')
-  async findOne(@Param('id', ParseIntPipe) id: number): Promise<User> {
-    return await this.userService.findOne();
+  @Get('idx/search')
+  async searchIdx(@Query() userSearchDto: UserSearchDTO): Promise<UserIdx[]> {
+    return await this.userService.searchIdx(userSearchDto);
   }
 }

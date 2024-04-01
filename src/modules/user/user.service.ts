@@ -19,8 +19,7 @@ export class UserService {
     return await this.userRepository.find(userSearchDto);
   }
 
-  async findOne() {
-    let options;
-    return await this.userRepository.findOne(options);
+  async searchIdx(userSearchDto) {
+    return await this.userIdxRepository.find(userSearchDto);
   }
 }
